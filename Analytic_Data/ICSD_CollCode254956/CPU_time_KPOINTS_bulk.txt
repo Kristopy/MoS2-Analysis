@@ -1,0 +1,9 @@
+KPOINTS    CPU-TIME(s) for TOTEN_bulk for various KPOINTS:
+2            3.144
+3            6.961
+4           12.313
+5           21.875
+6           34.569
+7           52.541
+8           77.595
+9          106.803

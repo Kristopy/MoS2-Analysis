@@ -1,0 +1,52 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.iso885915"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Starting job 28533278 ("jobname") on c15-3 at Fri Nov 8 12:18:00 CET 2019
+ running on    4 total cores
+ distrk:  each k-point on    4 cores,    1 groups
+ distr:  one band on    2 cores,    2 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jun 30 2017 11:15:00) complex          
+  
+ POSCAR found type information on POSCAR  Mo S 
+ POSCAR found :  2 types and       6 ions
+ scaLAPACK will be used
+ LDA part: xc-table for Pade appr. of Perdew
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Tetrahedron method fails for NKPT<4. NKPT =       2
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Tetrahedron method fails for NKPT<4. NKPT =       2
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Tetrahedron method fails for NKPT<4. NKPT =       2
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Tetrahedron method fails for NKPT<4. NKPT =       2
+
+Currently Loaded Modulefiles:
+  1) Anaconda3/5.1.0       3) vesta/3.3.8           5) intel/2016.1
+  2) gnuplot/5.0.4         4) imagemagick/6.7.9-0   6) vasp/5.4.1.Feb16
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+28533278.ba+    216888K      2580K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+28533278        jobname          4                         00:00:04      0:0 
+28533278.0    pmi_proxy          1    279832K       538K   00:00:02      0:0 
+
+Job 28533278 ("jobname") completed on c15-3 at Fri Nov 8 12:18:02 CET 2019

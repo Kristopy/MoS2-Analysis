@@ -1,0 +1,332 @@
+%----------------------------------------------------------------------------------------
+%PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,onecolumn]{article}
+\usepackage[labelfont=bf]{caption} %Makes all label bold
+\usepackage{blindtext}             % Package to generate dummy text throughout this template 
+\usepackage{listings}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[utf8]{inputenc}
+%\usepackage[sc]{mathpazo}        % Use the Palatino font FINNE NY?!?!
+\usepackage[T1]{fontenc}         % Use 8-bit encoding that has 256 glyphs
+%\linespread{1.2}                 % Line spacing - Palatino needs more space between lines
+\usepackage{microtype}           % Slightly tweak font spacing for aesthetics
+\usepackage{cite}                %Citing references
+\usepackage[english]{babel}      % Language hyphenation and typographical rules
+\usepackage{titling}             % Customizing the title section
+\usepackage{hyperref}            % For hyperlinks in the PDF
+\usepackage{lettrine}            % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{enumitem}            % Customized lists
+\setlist[itemize]{noitemsep}     % Make itemize lists more compact
+\usepackage{bm,ltablex,microtype}
+\usepackage{relsize}             % Write symbols bigger
+\usepackage{abstract}            % Allows abstract customization
+\usepackage{titlesec}            % Allows customization of titles
+\usepackage{multirow}     
+\usepackage{xcolor,colortbl}     %Color-package for tables
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+
+\newcounter{daggerfootnote}
+\newcommand*{\daggerfootnote}[1]{%
+    \setcounter{daggerfootnote}{\value{footnote}}%
+    \renewcommand*{\thefootnote}{\fnsymbol{footnote}}%
+    \footnote[2]{#1}%
+    \setcounter{footnote}{\value{daggerfootnote}}%
+    \renewcommand*{\thefootnote}{\arabic{footnote}}%
+    }
+
+%\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+%\usepackage{booktabs} % Horizontal rules in tables
+%\setlength\belowcaptionskip{-3ex}
+
+%----------------------------------------------------------------------------------------
+%CHANGING ABSTRACT
+%----------------------------------------------------------------------------------------
+\renewcommand{\abstractnamefont}{\normalfont\bfseries}      % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+
+%----------------------------------------------------------------------------------------
+%CHANGING SECTION
+%----------------------------------------------------------------------------------------
+\renewcommand\thesection{\Roman{section}}                                    % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}}                              % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{\bfseries} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{\itshape}             % Change the look of the section titles
+\titleformat{\subsubsection}[block]{\large}{\thesubsubsection.}{1em}{\itshape}             % Change the look of the section titles
+%----------------------------------------------------------------------------------------
+%CHANGING APPENDICES
+%----------------------------------------------------------------------------------------
+% Fixes the table of contents where the roman numerals gets to high
+\usepackage[tocindentauto]{tocstyle}
+\usetocstyle{KOMAlike} %the previous line resets it
+
+% Appendix
+\usepackage{appendix}
+
+% Dirac Notation
+\usepackage{braket}
+
+%----------------------------------------------------------------------------------------
+%FANCY HEADER AND FOOTERS
+%----------------------------------------------------------------------------------------
+\usepackage{fancyhdr}         % Headers and footers
+\pagestyle{fancy}             % All pages have headers and footers
+\fancyhead{}                  % Blank out the default header
+\fancyfoot{}                  % Blank out the default footer
+\fancyhead[C]{Computational Physics} % Custom header text
+\fancyhead[R]{\href{https://github.com/patrykpk/FYS4150/tree/master/Project_3}{GitHub}} % Custom header text
+\rfoot{\thepage}                     % Adding page number on right side of foot
+\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+
+%----------------------------------------------------------------------------------------
+%DEFINING LSTLISTING
+%----------------------------------------------------------------------------------------
+\definecolor{mygray}{gray}{0.95}
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  backgroundcolor=\color{mygray},
+  xleftmargin=\parindent,
+  language=C++,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange}
+}
+
+%----------------------------------------------------------------------------------------
+%					PICTURES-PATH
+%----------------------------------------------------------------------------------------
+\graphicspath{{Pictures/}} %Path to pictures
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+\setlength\parindent{0pt} %Setting indent to 0pt
+\date{\today} % Leave empty to omit a date
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------------------------------
+%     						TITLE PAGE
+%----------------------------------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+	\centering % Centre everything on the title page
+	
+	\scshape % Use small caps for all text on the title page
+	
+	\vspace*{\baselineskip} % White space at the top of the page
+	
+	%------------------------------------------------
+	%				Title
+	%------------------------------------------------
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal rule
+	
+	\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{0.75\baselineskip} % Whitespace above the title	
+	
+	{\Large{Comprehensive analysis of 3D $\&$ 2D model of $MoS_2$}
+	} % Title
+	
+	\vspace{0.75\baselineskip} % Whitespace below the title
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
+	
+	\rule{\textwidth}{1.6pt} % Thick horizontal rule
+	
+	\vspace{2\baselineskip} % Whitespace after the title block
+	
+	%------------------------------------------------
+	%			Subtitle
+	%------------------------------------------------
+	
+	%{\LARGE FYS4150 } % Subtitle or further description
+	
+	\vspace*{3\baselineskip} % Whitespace under the subtitle
+	
+	%------------------------------------------------
+	%			Editor(s)
+	%------------------------------------------------
+       \large Written by:	
+       
+	\vspace{0.5\baselineskip} % Whitespace before the editors	
+	\textit{Kristoffer Varslott \\} % Editor list	
+	\vspace{0.5\baselineskip} % Whitespace below the editor list
+	
+	\bigskip
+	
+	Department of Physics UiO % Editor affiliation
+	
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\graphicspath{{Pictures/}} %Path to pictures
+	\includegraphics[scale = 0.7]{University.png}
+	\vfill % Whitespace between editor names and publisher logo
+	%------------------------------------------------
+	\bigskip
+	\bigskip	
+	%\textit{\href{http://www.github.com}{Source code GitHub}}% Your email address
+	%------------------------------------------------
+	\bigskip
+	\bigskip
+	\bigskip
+	\bigskip
+	\vspace{0.3\baselineskip} % Whitespace under the publisher logo
+	
+	\today
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------------------------------
+%     END TITLE PAGE
+%----------------------------------------------------------------------------------------------------------------
+
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+%                                              MAIN CONTENT
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+%----------------------------------------------------------------------------------------------------------------
+%                                                ABSTRACT
+%----------------------------------------------------------------------------------------------------------------
+
+%\tableofcontents
+
+
+\begin{abstract}
+
+Analysing $MoS_2$ using DFT calculations provides a good approximation to experimental data [Reference to experimental data here!!!]. Looking at both bulk and thinlayer $MoS_2$, it was discovered that the bandstructures for these two structures differed quite a lot. Where the bulk $MoS_2$ gave a indirect band gap and the thinlayer $MoS_2$, showed a direct bandgap. BLABLABLA
+
+\end{abstract}
+
+
+{\bf{Checklist}}
+
+\begin{itemize}
+\item[1] Work on either $MoS_2$- Molybdenum disulfide or $WS_2$ tungsten disulfide. Both of which have the same crystal structure so-called isotypic and is classified as transition metal dichalcogenide. The primitive unit cell of WS2 consists of one tungsten atom and two sulphur atoms, arranged in a trigonal prismatic configuration. Valleytronics (from valley and electronics) is an experimental area in semiconductors that exploits local minima ("valleys") in the electronic band structure.
+\begin{itemize}
+\item[*] {\bf Properties of $\mathbf{MoS_2}$}
+
+\bigskip
+
+{\bf bulk properties of $\mathbf{MoS_2}$}. MoS2 occurs naturally as the mineral 'molybdenite'. In its bulk form, it appears as a dark, shiny solid. The weak interlayer interactions allow sheets to easily slide over one another, so it is often used as a lubricant. It can also be used as an alternative to graphite in high-vacuum applications, but it does have a lower maximum operating temperature than graphite. Bulk MoS2 is a semiconductor with an {\bf{indirect bandgap}} of ~1.2eV, and is therefore of limited interest to the optoelectronics industry.
+
+In the case of MoS2, the spin splitting in conduction band is in the meV range, it is expected to be more pronounced in other material like WS2.
+
+\bigskip
+
+{\bf Thinlayer properties of $\mathbf{MoS_2}$}
+
+Individual layers of MoS2 have radically different properties compared to the bulk. Removing interlayer interactions and confining electrons into a single plane results in the formation of a {\bf{direct bandgap}}
+
+\bigskip
+
+\item[*] {\bf{Properties of $\mathbf{WS_2}$}} 
+
+\bigskip
+
+The monolayer film possesses a direct bandgap of 2.1 eV.
+
+\end{itemize}
+\item[2]Relax the crystal structure, submit job and find total energy as lattice parameter a is altered. Use birch$\_$murnaghan.py to fit these points into a E(a) plot, where minimum energy corresponds to the favored lattice constant for a system at equallibrium. Another interesting thing one may do, is to check when total energy is converged, as well as k-points. 
+ 
+\item[3]
+\item[4]
+
+tail -n 20 OUTCAR- Last 20 lines in OUTCAR, Total CPU-time is displayed here. 
+
+
+
+
+
+
+\end{itemize}
+
+%----------------------------------------------------------------------------------------------------------------
+%                                        INTRODUCTION
+%----------------------------------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Molybdenum sulfides has a so-called isotypic crystal structure and is classified as transition metal dichalcogenide. In this paper, one will investigate both bulk and monolayer structures of $MoS_2$ 2H. This kind of arrangement of molybdenum sulfide is  trigonal prismatic, which means that the sulfides is arranged in a symmetric order above and underneath the molybdenum atom. 
+
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale= 0.46]{Pictures/MoS2.png}}
+\caption{Illustration of the bulk $MoS_2$ 2H. Where the yellow illustrates the sulfides and purple molybdenum atoms}
+\label{fig:MoS2}
+\end{figure}
+
+$MoS_2$ occurs naturally in nature as molybdenite. in its bulk form, as we will investigate, it appears as a dark, shiny solid. The bulk layer sheets is held up by weak Van der Waals forces. These forces is the holding stone of the bulk solid. In bulk form it is often used as a lubricant, due to its weak interlayer forces. As for the thinlayer $MoS_2$, we extrapolate the layer of the bulk $MoS_2$. We will investigate which properties that change as we go from bulk to thinlayer film. By looking at density of states for both systems and investigating the bandstructures. Further more when analysing $MoS_2$, we will use standardize self-consistent calculation method in which the Hartree Fock method is applied. We will After that investigate the increase in accuracy when doing vasp calculations with HSE06 hybrid functional. 
+
+%----------------------------------------------------------------------------------------------------------------
+%                                         METHOD
+%----------------------------------------------------------------------------------------------------------------
+
+\section{Method}
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%                                                  RESULTS
+%----------------------------------------------------------------------------------------------------------------
+
+
+\section{Implementation}
+
+
+%----------------------------------------------------------------------------------------------------------------
+%                                                RESULTS
+%----------------------------------------------------------------------------------------------------------------
+
+\section{Numerical results}
+
+
+%----------------------------------------------------------------------------------------------------------------
+%                                                DISCUSSION
+%----------------------------------------------------------------------------------------------------------------
+
+\section{Discussion}
+
+
+
+%----------------------------------------------------------------------------------------------------------------
+%                                               CONCLUSION
+%----------------------------------------------------------------------------------------------------------------
+
+\section{Conclusion}
+
+%---------------------------------------------------------------------------------------------------------------
+%					REFERENCE LIST
+%---------------------------------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+\bibliography{BiBTeX/Project3_FYS4150.bib}
+
+
+% ------------------- end of main content ---------------
+
+\end{document}

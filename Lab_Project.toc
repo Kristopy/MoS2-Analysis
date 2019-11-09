@@ -1,0 +1,7 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {I}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {II}Method}{2}{section.2}
+\contentsline {section}{\numberline {III}Implementation}{3}{section.3}
+\contentsline {section}{\numberline {IV}Numerical results}{3}{section.4}
+\contentsline {section}{\numberline {V}Discussion}{3}{section.5}
+\contentsline {section}{\numberline {VI}Conclusion}{3}{section.6}

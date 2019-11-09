@@ -1,0 +1,109 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.iso885915"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Starting job 28531634 ("jobname") on c14-1 at Fri Nov 8 10:34:27 CET 2019
+ running on    4 total cores
+ distrk:  each k-point on    4 cores,    1 groups
+ distr:  one band on    2 cores,    2 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jun 30 2017 11:15:00) complex          
+  
+ POSCAR found type information on POSCAR  Mo S 
+ POSCAR found :  2 types and       6 ions
+ scaLAPACK will be used
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ WARNING: random wavefunctions but no delay for mixing, default for NELMDL
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.247075150653E+03    0.24708E+03   -0.17871E+04   176   0.169E+03
+DAV:   2    -0.243587319474E+02   -0.27143E+03   -0.26409E+03   244   0.295E+02
+DAV:   3    -0.461653754317E+02   -0.21807E+02   -0.21681E+02   240   0.832E+01
+DAV:   4    -0.468840378241E+02   -0.71866E+00   -0.71796E+00   242   0.166E+01
+DAV:   5    -0.468993038765E+02   -0.15266E-01   -0.15260E-01   240   0.256E+00    0.967E+00
+RMM:   6    -0.445247120078E+02    0.23746E+01   -0.23448E+01   198   0.194E+01    0.336E+00
+RMM:   7    -0.438055238890E+02    0.71919E+00   -0.20085E+00   193   0.563E+00    0.179E+00
+RMM:   8    -0.437436650422E+02    0.61859E-01   -0.92410E-01   202   0.341E+00    0.840E-01
+RMM:   9    -0.437322774798E+02    0.11388E-01   -0.30118E-01   214   0.226E+00    0.567E-01
+RMM:  10    -0.437162572058E+02    0.16020E-01   -0.61102E-02   214   0.106E+00    0.611E-02
+RMM:  11    -0.437164712468E+02   -0.21404E-03   -0.30050E-03   225   0.219E-01    0.368E-02
+RMM:  12    -0.437165984869E+02   -0.12724E-03   -0.68650E-04   224   0.127E-01    0.143E-02
+RMM:  13    -0.437166054028E+02   -0.69159E-05   -0.15042E-04   210   0.442E-02    0.160E-02
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 28531634 ON c14-1 CANCELLED AT 2019-11-08T10:34:32 ***
+
+slurmstepd: error: *** STEP 28531634.0 ON c14-1 CANCELLED AT 2019-11-08T10:34:32 ***
+Currently Loaded Modulefiles:
+  1) Anaconda3/5.1.0       3) vesta/3.3.8           5) intel/2016.1
+  2) gnuplot/5.0.4         4) imagemagick/6.7.9-0   6) vasp/5.4.1.Feb16
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+28531634.ba+    605280K      6097K 
+
+Job step resource usage:
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000058E929A  Unknown               Unknown  Unknown
+libpthread-2.12.s  00007F3AB714C7E0  Unknown               Unknown  Unknown
+vasp_std           0000000001CE3035  Unknown               Unknown  Unknown
+vasp_std           00000000037CE355  mkl_blas_avx_ztrs     Unknown  Unknown
+vasp_std           00000000037B3D7A  mkl_blas_avx_ztrs     Unknown  Unknown
+vasp_std           0000000001B79E31  mkl_blas_avx_xztr     Unknown  Unknown
+vasp_std           00000000017C0670  Unknown               Unknown  Unknown
+vasp_std           0000000001773DCE  Unknown               Unknown  Unknown
+vasp_std           0000000000DE8B4E  Unknown               Unknown  Unknown
+vasp_std           0000000000E5EC64  Unknown               Unknown  Unknown
+vasp_std           00000000015162B8  Unknown               Unknown  Unknown
+vasp_std           00000000014F1F6A  Unknown               Unknown  Unknown
+vasp_std           000000000044331E  Unknown               Unknown  Unknown
+libc-2.12.so       00007F3AB58C5D20  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000443229  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000058E929A  Unknown               Unknown  Unknown
+libpthread-2.12.s  00007F83730AE7E0  Unknown               Unknown  Unknown
+vasp_std           0000000001CE3035  Unknown               Unknown  Unknown
+vasp_std           00000000037CE355  mkl_blas_avx_ztrs     Unknown  Unknown
+vasp_std           00000000037B3D7A  mkl_blas_avx_ztrs     Unknown  Unknown
+vasp_std           0000000001B79E31  mkl_blas_avx_xztr     Unknown  Unknown
+vasp_std           00000000017C0670  Unknown               Unknown  Unknown
+vasp_std           0000000001773DCE  Unknown               Unknown  Unknown
+vasp_std           0000000000DE8B4E  Unknown               Unknown  Unknown
+vasp_std           0000000000E5EC64  Unknown               Unknown  Unknown
+vasp_std           00000000015162B8  Unknown               Unknown  Unknown
+vasp_std           00000000014F1F6A  Unknown               Unknown  Unknown
+vasp_std           000000000044331E  Unknown               Unknown  Unknown
+libc-2.12.so       00007F8371827D20  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000443229  Unknown               Unknown  Unknown
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+28531634        jobname          4                         00:00:07      0:0 
+28531634.0    pmi_proxy          1                         00:00:05      0:0 
+
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000058E929A  Unknown               Unknown  Unknown
+libpthread-2.12.s  00007F218B5747E0  Unknown               Unknown  Unknown
+vasp_std           0000000001CE3035  Unknown               Unknown  Unknown
+vasp_std           00000000037CE355  mkl_blas_avx_ztrs     Unknown  Unknown
+vasp_std           00000000037B3D7A  mkl_blas_avx_ztrs     Unknown  Unknown
+vasp_std           0000000001B79E31  mkl_blas_avx_xztr     Unknown  Unknown
+vasp_std           00000000017C0670  Unknown               Unknown  Unknown
+vasp_std           0000000001773DCE  Unknown               Unknown  Unknown
+vasp_std           0000000000DE8B4E  Unknown               Unknown  Unknown
+vasp_std           0000000000E5EC64  Unknown               Unknown  Unknown
+vasp_std           00000000015162B8  Unknown               Unknown  Unknown
+vasp_std           00000000014F1F6A  Unknown               Unknown  Unknown
+vasp_std           000000000044331E  Unknown               Unknown  Unknown
+libc-2.12.so       00007F2189CEDD20  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000443229  Unknown               Unknown  Unknown
+Job 28531634 ("jobname") completed on c14-1 at Fri Nov 8 10:34:32 CET 2019

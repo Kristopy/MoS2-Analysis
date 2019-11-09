@@ -1,0 +1,61 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.iso885915"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Starting job 28533317 ("jobname") on c14-5 at Fri Nov 8 12:20:44 CET 2019
+ running on    4 total cores
+ distrk:  each k-point on    4 cores,    1 groups
+ distr:  one band on    2 cores,    2 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jun 30 2017 11:15:00) complex          
+  
+ POSCAR found type information on POSCAR  Mo S 
+ POSCAR found :  2 types and       3 ions
+ scaLAPACK will be used
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ WARNING: random wavefunctions but no delay for mixing, default for NELMDL
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.129615645755E+03    0.12962E+03   -0.53433E+03   196   0.799E+02
+DAV:   2    -0.645342145328E+01   -0.13607E+03   -0.12654E+03   340   0.158E+02
+DAV:   3    -0.230576642200E+02   -0.16604E+02   -0.16412E+02   280   0.716E+01
+DAV:   4    -0.233965653045E+02   -0.33890E+00   -0.33704E+00   238   0.131E+01
+DAV:   5    -0.234053301299E+02   -0.87648E-02   -0.87634E-02   284   0.201E+00    0.688E+00
+RMM:   6    -0.222439571741E+02    0.11614E+01   -0.54160E+00   205   0.123E+01    0.261E+00
+RMM:   7    -0.218609590782E+02    0.38300E+00   -0.55781E-01   205   0.341E+00    0.150E+00
+RMM:   8    -0.218008863910E+02    0.60073E-01   -0.23206E-01   211   0.251E+00    0.354E-01
+RMM:   9    -0.217959979341E+02    0.48885E-02   -0.85813E-03   233   0.601E-01    0.949E-02
+RMM:  10    -0.217952488714E+02    0.74906E-03   -0.16216E-03   230   0.216E-01    0.439E-02
+RMM:  11    -0.217951723197E+02    0.76552E-04   -0.15977E-03   219   0.187E-01    0.530E-02
+RMM:  12    -0.217950141619E+02    0.15816E-03   -0.51317E-04   212   0.128E-01    0.176E-02
+RMM:  13    -0.217953560318E+02   -0.34187E-03   -0.16932E-04   200   0.728E-02    0.201E-02
+RMM:  14    -0.217954101727E+02   -0.54141E-04   -0.25349E-05   175   0.280E-02    0.487E-03
+RMM:  15    -0.217955366626E+02   -0.12649E-03   -0.11281E-05   134   0.172E-02    0.259E-03
+RMM:  16    -0.217955773093E+02   -0.40647E-04   -0.25562E-06   117   0.839E-03    0.149E-03
+RMM:  17    -0.217956091991E+02   -0.31890E-04   -0.22864E-06    98   0.687E-03    0.107E-03
+RMM:  18    -0.217956136103E+02   -0.44112E-05   -0.42187E-07    54   0.416E-03
+   1 F= -.22386412E+02 E0= -.22386412E+02  d E =0.000000E+00
+
+Currently Loaded Modulefiles:
+  1) Anaconda3/5.1.0       3) vesta/3.3.8           5) intel/2016.1
+  2) gnuplot/5.0.4         4) imagemagick/6.7.9-0   6) vasp/5.4.1.Feb16
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+28533317.ba+    216888K      2587K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+28533317        jobname          4                         00:00:10      0:0 
+28533317.0    pmi_proxy          1    279832K       534K   00:00:08      0:0 
+
+Job 28533317 ("jobname") completed on c14-5 at Fri Nov 8 12:20:52 CET 2019
