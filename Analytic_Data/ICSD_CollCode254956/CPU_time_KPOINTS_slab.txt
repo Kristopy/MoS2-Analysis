@@ -1,9 +1,0 @@
-KPOINTS    CPU-TIME(s) for TOTEN_slab_14_C_Vakuum for various KPOINTS:
-2             4.231
-3             5.876
-4             9.005
-5            12.462
-6            16.599
-7            19.727
-8            27.075
-9            30.372
