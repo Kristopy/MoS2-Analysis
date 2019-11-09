@@ -5,10 +5,9 @@ from matplotlib import rc, rcParams
 
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
-
+path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
 # plt.style.use('classic')
-graph_data = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CORRECT/Slab_vakuum_layer.txt', 'r').read()
+graph_data = open(path_file + 'Slab_vakuum_layer.txt', 'r').read()
 
 lines = graph_data.split("\n")
 Layer = []
@@ -33,7 +32,7 @@ print ("Code time:", end - start)
 
 for i in range(len(TOTEN)-1):
     Delta = TOTEN[i] - TOTEN[i+1]
-    if abs(Delta) <= 0.0001:
+    if abs(Delta) <= 0.0002:
         print ("Converged")
 
         print (Layer[i])
@@ -41,6 +40,7 @@ for i in range(len(TOTEN)-1):
     else:
         print ("Not converged")
         print (Layer[i])
+        print (Delta)
 
 plt.figure(1)
 plt.plot(Layer, MxForce, linewidth=0.5, linestyle="-", marker="o", markersize=0.8)

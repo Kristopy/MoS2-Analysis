@@ -5,15 +5,13 @@ from matplotlib import rc, rcParams
 
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
+path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
 
-# plt.style.use('classic')
-graph_data_bulk = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/Bandgap_KPOINTS_bulk.txt', 'r').read()
+graph_data_bulk = open(path_file + 'Bandgap_KPOINTS_bulk.txt', 'r').read()
 
 lines_bulk = graph_data_bulk.split("\n")
 
-graph_data_slab = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/Bandgap_KPOINTS_slab.txt', 'r').read()
+graph_data_slab = open(path_file + 'Bandgap_KPOINTS_slab.txt', 'r').read()
 
 lines_slab = graph_data_slab.split("\n")
 
@@ -71,19 +69,19 @@ plt.title("Bandgap convergence as a function of the k-point density")
 """
 plt.figure(1)
 plt.subplot(2, 1, 1)
-plt.plot(Cutoff, Gap_bulk, "--o", linewidth=1, label="Bulk")
-plt.legend(loc='right', prop={"size": 10})
-plt.xlabel("Energy Cutoff [eV]")
+plt.plot(Cutoff, Gap_bulk, "--o", linewidth=1, markersize=2, label="Bulk")
+plt.legend(loc='upper right', prop={"size": 10})
+plt.xlabel("KPOINTS")
 plt.ylabel('Band gap [eV]')
-plt.title("Energy cutoff vs total pressure [BULK]")
+plt.title("Bandgap vs KPOINTS [BULK]")
 plt.subplot(2, 1, 2)
-plt.plot(Cutoff, Gap_slab, "--o", color="orange", linewidth=1, label="Slab")
-plt.legend(loc='right', prop={"size": 10})
-plt.xlabel("Energy Cutoff [eV]")
+plt.plot(Cutoff, Gap_slab, "--o", color="orange", linewidth=1, markersize=2, label="Slab")
+plt.legend(loc='upper right', prop={"size": 10})
+plt.xlabel("KPOINTS")
 plt.ylabel('Band gap [eV]')
-plt.title("Energy cutoff vs total pressure [SLAB]")
+plt.title("Bandgap vs KPOINTS [SLAB]")
 plt.tight_layout()
-
+"""
 plt.figure(2)
 plt.subplot(2, 1, 1)
 plt.plot(Cutoff, Vbm_bulk, "--o", linewidth=1, label="Bulk")
@@ -113,4 +111,5 @@ plt.xlabel("Energy Cutoff [eV]")
 plt.ylabel("CBM")
 plt.title("Energy cutoff vs maximum force [SLAB]")
 plt.tight_layout()
+"""
 plt.show()

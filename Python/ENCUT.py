@@ -5,10 +5,9 @@ from matplotlib import rc, rcParams
 
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
-
+path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
 # plt.style.use('classic')
-graph_data = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/ENCUT_bulk.txt', 'r').read()
+graph_data = open(path_file + 'ENCUT_bulk.txt', 'r').read()
 
 lines = graph_data.split("\n")
 ENCUT = []

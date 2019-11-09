@@ -5,15 +5,13 @@ from matplotlib import rc, rcParams
 
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
-
-# plt.style.use('classic')
-graph_data_bulk = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CORRECT/ENCUT_bulk.txt', 'r').read()
+path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
+path_picture = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Pictures/'
+graph_data_bulk = open(path_file + 'ENCUT_bulk.txt', 'r').read()
 
 lines_bulk = graph_data_bulk.split("\n")
 
-graph_data_slab = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CORRECT/ENCUT_slab_5_C_Vakuum.txt', 'r').read()
+graph_data_slab = open(path_file + 'ENCUT_slab_5_C_Vakuum.txt', 'r').read()
 
 lines_slab = graph_data_slab.split("\n")
 
@@ -85,20 +83,21 @@ plt.xlabel("ENCUT [eV]", fontsize=14)
 plt.ylabel('TOTEN [eV]', fontsize=14)
 plt.title("Relative TOTEN", fontsize=15)
 plt.tight_layout()
-plt.savefig("/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Pictures/REL_EN.png")
+plt.savefig(path_picture + "REL_EN.png")
 
 plt.figure(2)
 plt.plot(ENCUT, RELATIVE_PR, linewidth=0.5, color="tab:orange")
 plt.xlabel("ENCUT [eV]", fontsize=14)
 plt.ylabel('Pressure [eV/Å]', fontsize=14)
 plt.title("Relative Pressure", fontsize=15)
-plt.savefig("/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Pictures/REL_PR.png")
+plt.savefig(path_picture + "REL_PR.png")
 
+"""
 plt.figure(3)
 plt.plot(ENCUT, RELATIVE_MX, linewidth=0.5, linestyle="-", marker="o", markersize=0.8)
 plt.xlabel("ENCUT [eV]", fontsize=14)
 plt.ylabel('Force [eV]', fontsize=14)
 plt.title("Relative MxForce", fontsize=15)
-plt.savefig("/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Pictures/REL_MX.png")
-
+plt.savefig(path_picture + "REL_MX.png")
+"""
 plt.show()

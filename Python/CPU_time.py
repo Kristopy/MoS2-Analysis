@@ -5,22 +5,19 @@ from matplotlib import rc, rcParams
 
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
+path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
+path_picture = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Pictures/'
 
-# plt.style.use('classic')
-graph_data_bulk = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CPU_time_ENCUT_bulk.txt', 'r').read()
+graph_data_bulk = open(path_file + 'CPU_time_ENCUT_bulk.txt', 'r').read()
 lines_bulk = graph_data_bulk.split("\n")
 
-graph_data_slab = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CPU_time_ENCUT_slab.txt', 'r').read()
+graph_data_slab = open(path_file + 'CPU_time_ENCUT_slab.txt', 'r').read()
 lines_slab = graph_data_slab.split("\n")
 
-graph_data_bulk_KPOINTS = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CPU_time_KPOINTS_bulk.txt', 'r').read()
+graph_data_bulk_KPOINTS = open(path_file + 'CPU_time_KPOINTS_bulk.txt', 'r').read()
 lines_bulk_KPOINTS = graph_data_bulk_KPOINTS.split("\n")
 
-graph_data_slab_KPOINTS = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CPU_time_KPOINTS_slab.txt', 'r').read()
+graph_data_slab_KPOINTS = open(path_file + 'CPU_time_KPOINTS_slab.txt', 'r').read()
 lines_slab_KPOINTS = graph_data_slab_KPOINTS.split("\n")
 
 
@@ -67,7 +64,7 @@ plt.xlabel("ENCUT [eV]", fontsize=14)
 plt.ylabel('CPU-time [s]', fontsize=14)
 plt.title("CPU-time for bulk $\\&$ slab", fontsize=15)
 plt.tight_layout()
-plt.savefig("/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Pictures/CPU_EN.png")
+plt.savefig(path_picture + "CPU_EN.png")
 
 # Figure Containing KPOINTS
 plt.figure(2)
@@ -80,6 +77,6 @@ plt.xlabel("KPOINTS", fontsize=14)
 plt.ylabel('CPU-time [s]', fontsize=14)
 plt.title("CPU-time for bulk $\\&$ slab", fontsize=15)
 plt.tight_layout()
-plt.savefig("/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Pictures/CPU_KP.png")
+plt.savefig(path_picture+"CPU_KP.png")
 
 plt.show()

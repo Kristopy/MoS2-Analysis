@@ -6,14 +6,14 @@ from matplotlib import rc, rcParams
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
 
-# plt.style.use('classic')
-graph_data_bulk = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/Bandgap_ENCUT_bulk.txt', 'r').read()
+path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
+path_picture = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Pictures/'
+
+graph_data_bulk = open(path_file + 'Bandgap_ENCUT_bulk.txt', 'r').read()
 
 lines_bulk = graph_data_bulk.split("\n")
 
-graph_data_slab = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/Bandgap_ENCUT_slab.txt', 'r').read()
+graph_data_slab = open(path_file + 'Bandgap_ENCUT_slab.txt', 'r').read()
 
 lines_slab = graph_data_slab.split("\n")
 
@@ -54,39 +54,24 @@ end = time.time()
 
 print ("Code time:", end - start)
 
-"""
-List_conv = [y - x for x, y in zip(Gap, Gap[1:-1])]
-List_pos = np.abs(List_conv)
-print (List_pos)
-
-For KPOINTS:
-
-plt.figure(1)
-plt.plot(k_points, List_pos[:6], "--o", linewidth=1)
-# plt.plot(x, v, linewidth=1, linestyle="--", label='Numerical solution')
-# plt.legend(loc='right', prop={"size": 10})
-plt.xlabel("k-point density")
-plt.ylabel('Bandgap convergence [eV]')
-plt.title("Bandgap convergence as a function of the k-point density")
-"""
 
 plt.figure(1)
 plt.subplot(2, 1, 1)
-plt.plot(Cutoff, Gap_bulk, "--o", linewidth=1, label="Bulk")
-plt.legend(loc='right', prop={"size": 10})
+plt.plot(Cutoff, Gap_bulk, "--o", linewidth=0.75, markersize=2, label="Bulk")
+plt.legend(loc='upper right', prop={"size": 10})
 plt.xlabel("Energy Cutoff [eV]")
 plt.ylabel('Bandgap [eV]')
 plt.title("Energy cutoff vs Bandgap [BULK]")
 plt.subplot(2, 1, 2)
-plt.plot(Cutoff, Gap_slab, "--o", color="orange", linewidth=1, label="Slab")
-plt.legend(loc='right', prop={"size": 10})
+plt.plot(Cutoff, Gap_slab, "--o", color="orange", linewidth=0.75, markersize=2, label="Slab")
+plt.legend(loc='upper right', prop={"size": 10})
 plt.xlabel("Energy Cutoff [eV]")
 plt.ylabel('Bandgap [eV]')
 plt.title("Energy cutoff vs Bandgap [SLAB]")
 plt.tight_layout()
-plt.savefig("/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Pictures/Bandgap_EN.png")
+plt.savefig(path_picture + "Bandgap_EN.png")
 
-
+"""
 plt.figure(2)
 plt.subplot(2, 1, 1)
 plt.plot(Cutoff, Vbm_bulk, "--o", linewidth=1, label="Bulk")
@@ -116,4 +101,5 @@ plt.xlabel("Energy Cutoff [eV]")
 plt.ylabel("CBM")
 plt.title("Energy cutoff vs maximum force [SLAB]")
 plt.tight_layout()
+"""
 plt.show()

@@ -5,15 +5,14 @@ from matplotlib import rc, rcParams
 
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
-
+path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
+path_picture = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Pictures/'
 # plt.style.use('classic')
-graph_data_bulk = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CORRECT/KPOINTS_bulk.txt', 'r').read()
+graph_data_bulk = open(path_file + 'KPOINTS_bulk.txt', 'r').read()
 
 lines_bulk = graph_data_bulk.split("\n")
 
-graph_data_slab = open(
-    '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Analytic_Data/CORRECT/KPOINTS_slab.txt', 'r').read()
+graph_data_slab = open(path_file + 'KPOINTS_slab.txt', 'r').read()
 
 lines_slab = graph_data_slab.split("\n")
 
@@ -45,12 +44,21 @@ RELATIVE = ([x1 - x2 for (x1, x2) in zip(TOTEN_bulk, TOTEN_slab)])
 
 plt.figure(1)
 plt.plot(KPOINTS, RELATIVE, linewidth=0.5, linestyle="-", marker="o", markersize=3.0)
-plt.legend(loc='upper right', prop={"size": 12})
+#plt.legend(loc='upper right', prop={"size": 12})
 plt.xlabel("KPOINTS", fontsize=14)
 plt.ylabel('TOTEN [eV]', fontsize=14)
 plt.title("Relative TOTEN of KPOINTS", fontsize=15)
 plt.tight_layout()
-plt.savefig("/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/Lab_Project/Pictures/REL_KP_EN.png")
+plt.savefig(path_picture + "REL_KP_EN.png")
+
+plt.figure(2)
+plt.plot(KPOINTS, RELATIVE, linewidth=0.5, linestyle="-", marker="o", markersize=3.0)
+#plt.legend(loc='upper right', prop={"size": 12})
+plt.xlabel("KPOINTS", fontsize=14)
+plt.ylabel('Pressure [eV/Å]', fontsize=14)
+plt.title("Relative Pressure of KPOINTS", fontsize=15)
+plt.tight_layout()
+plt.savefig(path_picture + "REL_KP_PR.png")
 plt.show()
 
 for i in range(len(RELATIVE)-1):
@@ -63,7 +71,7 @@ for i in range(len(RELATIVE)-1):
     else:
         print ("Not converged")
         print (KPOINTS[i])
-# According to print output, use 650eV aIs ENCUT
+
+# According to print output, use 450eV aIs ENCUT
 # According to print output, use KPOINT-density as 5.0 CORRECT
 # Have now aquired desired results for ENCUT and KPOINTS.
-# Note to self: VASPDIST directory in abel contains correct [INCAR KPOINTS POTCAR POSCAR jobfile]
