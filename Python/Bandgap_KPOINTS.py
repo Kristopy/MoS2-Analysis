@@ -6,6 +6,7 @@ from matplotlib import rc, rcParams
 rc('text', usetex=True)
 rc('font', **{'family': 'serif', 'serif': ['Random']})
 path_file = "/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Analytic_Data/"
+path_picture = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Pictures/'
 
 graph_data_bulk = open(path_file + 'Bandgap_KPOINTS_bulk.txt', 'r').read()
 
@@ -81,6 +82,8 @@ plt.xlabel("KPOINTS")
 plt.ylabel('Band gap [eV]')
 plt.title("Bandgap vs KPOINTS [SLAB]")
 plt.tight_layout()
+plt.savefig(path_picture + "Bandgap_KP.png")
+
 """
 plt.figure(2)
 plt.subplot(2, 1, 1)
