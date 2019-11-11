@@ -49,7 +49,7 @@ plt.xlabel("KPOINTS", fontsize=14)
 plt.ylabel('TOTEN [eV]', fontsize=14)
 plt.title("Relative TOTEN of KPOINTS", fontsize=15)
 plt.tight_layout()
-plt.savefig(path_picture + "REL_KP_EN.png")
+plt.savefig(path_picture + "REL_KP_EN.eps", format='eps', dpi=1200)
 
 plt.figure(2)
 plt.plot(KPOINTS, RELATIVE, linewidth=0.5, linestyle="-", marker="o", markersize=3.0)
@@ -58,7 +58,7 @@ plt.xlabel("KPOINTS", fontsize=14)
 plt.ylabel('Pressure [eV/Å]', fontsize=14)
 plt.title("Relative Pressure of KPOINTS", fontsize=15)
 plt.tight_layout()
-plt.savefig(path_picture + "REL_KP_PR.png")
+plt.savefig(path_picture + "REL_KP_PR.eps", format='eps', dpi=1200)
 plt.show()
 
 for i in range(len(RELATIVE)-1):

@@ -64,7 +64,7 @@ plt.xlabel("ENCUT [eV]", fontsize=14)
 plt.ylabel('CPU-time [s]', fontsize=14)
 plt.title("CPU-time for bulk $\\&$ slab", fontsize=15)
 plt.tight_layout()
-plt.savefig(path_picture + "CPU_EN.png")
+plt.savefig(path_picture + "CPU_EN.eps", format='eps', dpi=1200)
 
 # Figure Containing KPOINTS
 plt.figure(2)
@@ -77,6 +77,6 @@ plt.xlabel("KPOINTS", fontsize=14)
 plt.ylabel('CPU-time [s]', fontsize=14)
 plt.title("CPU-time for bulk $\\&$ slab", fontsize=15)
 plt.tight_layout()
-plt.savefig(path_picture+"CPU_KP.png")
+plt.savefig(path_picture+"CPU_KP.eps", format='eps', dpi=1200)
 
 plt.show()

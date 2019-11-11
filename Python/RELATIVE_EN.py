@@ -83,14 +83,14 @@ plt.xlabel("ENCUT [eV]", fontsize=14)
 plt.ylabel('TOTEN [eV]', fontsize=14)
 plt.title("Relative TOTEN", fontsize=15)
 plt.tight_layout()
-plt.savefig(path_picture + "REL_EN.png")
+plt.savefig(path_picture + "REL_EN.eps", format='eps', dpi=1200)
 
 plt.figure(2)
 plt.plot(ENCUT, RELATIVE_PR, linewidth=0.5, color="tab:orange")
 plt.xlabel("ENCUT [eV]", fontsize=14)
 plt.ylabel('Pressure [eV/Å]', fontsize=14)
 plt.title("Relative Pressure", fontsize=15)
-plt.savefig(path_picture + "REL_PR.png")
+plt.savefig(path_picture + "REL_PR.eps", format='eps', dpi=1200)
 
 """
 plt.figure(3)

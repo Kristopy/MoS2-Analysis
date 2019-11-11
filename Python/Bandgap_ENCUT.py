@@ -69,7 +69,7 @@ plt.xlabel("Energy Cutoff [eV]")
 plt.ylabel('Bandgap [eV]')
 plt.title("Energy cutoff vs Bandgap [SLAB]")
 plt.tight_layout()
-plt.savefig(path_picture + "Bandgap_EN.png")
+plt.savefig(path_picture + "Bandgap_EN.eps", format='eps', dpi=1200)
 
 """
 plt.figure(2)

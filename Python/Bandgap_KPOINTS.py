@@ -82,7 +82,7 @@ plt.xlabel("KPOINTS")
 plt.ylabel('Band gap [eV]')
 plt.title("Bandgap vs KPOINTS [SLAB]")
 plt.tight_layout()
-plt.savefig(path_picture + "Bandgap_KP.png")
+plt.savefig(path_picture + "Bandgap_KP.eps", format='eps', dpi=1200)
 
 """
 plt.figure(2)
