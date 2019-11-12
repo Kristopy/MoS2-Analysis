@@ -32,7 +32,7 @@ print ("Code time:", end - start)
 
 for i in range(len(TOTEN)-1):
     Delta = TOTEN[i] - TOTEN[i+1]
-    if abs(Delta) <= 0.0002:
+    if abs(Delta) <= 0.001:
         print ("Converged")
 
         print (Layer[i])

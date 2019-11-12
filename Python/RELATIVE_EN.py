@@ -43,7 +43,7 @@ for i in range(len(lines_bulk)-1):
         Pressure_slab.append(c_slab[2])
 end = time.time()
 print ("Code time:", end - start)
-
+"""
 print("----------------------------------------------------")
 print ("Total energy bulk")
 print("----------------------------------------------------")
@@ -57,10 +57,10 @@ print ("Total Relative energy for bulk and slab")
 print("----------------------------------------------------")
 print ([x1 - x2 for (x1, x2) in zip(TOTEN_bulk, TOTEN_slab)])
 print("----------------------------------------------------")
+"""
 RELATIVE_EN = ([x1 - x2 for (x1, x2) in zip(TOTEN_bulk, TOTEN_slab)])
 RELATIVE_MX = ([x1 - x2 for (x1, x2) in zip(MxForce_bulk, MxForce_slab)])
 RELATIVE_PR = ([x1 - x2 for (x1, x2) in zip(Pressure_bulk, Pressure_slab)])
-
 
 for i in range(len(RELATIVE_EN)-1):
     Delta_EN = RELATIVE_EN[i] - RELATIVE_EN[i+1]

@@ -21,6 +21,9 @@ KPOINTS = []
 
 TOTEN_bulk = []
 TOTEN_slab = []
+
+Pressure_bulk = []
+Pressure_slab = []
 start = time.time()
 for i in range(len(lines_bulk)-1):
     if (i > 0 and i < len(lines_bulk)):
@@ -31,6 +34,8 @@ for i in range(len(lines_bulk)-1):
         KPOINTS.append(c_bulk[4])
         TOTEN_bulk.append(c_bulk[3])
         TOTEN_slab.append(c_slab[3])
+        Pressure_slab.append(c_slab[2])
+        Pressure_bulk.append(c_bulk[2])
 end = time.time()
 print ("Code time:", end - start)
 
@@ -40,10 +45,10 @@ print("--------------------------")
 print (TOTEN_slab)
 print("--------------------------")
 print ([x1 - x2 for (x1, x2) in zip(TOTEN_bulk, TOTEN_slab)])
-RELATIVE = ([x1 - x2 for (x1, x2) in zip(TOTEN_bulk, TOTEN_slab)])
-
+RELATIVE_EN = ([x1 - x2 for (x1, x2) in zip(TOTEN_bulk, TOTEN_slab)])
+RELATIVE_PR = ([x1 - x2 for (x1, x2) in zip(Pressure_bulk, Pressure_slab)])
 plt.figure(1)
-plt.plot(KPOINTS, RELATIVE, linewidth=0.5, linestyle="-", marker="o", markersize=3.0)
+plt.plot(KPOINTS, RELATIVE_EN, linewidth=0.5, linestyle="-", marker="o", markersize=3.0)
 #plt.legend(loc='upper right', prop={"size": 12})
 plt.xlabel("KPOINTS", fontsize=14)
 plt.ylabel('TOTEN [eV]', fontsize=14)
@@ -52,7 +57,8 @@ plt.tight_layout()
 plt.savefig(path_picture + "REL_KP_EN.eps", format='eps', dpi=1200)
 
 plt.figure(2)
-plt.plot(KPOINTS, RELATIVE, linewidth=0.5, linestyle="-", marker="o", markersize=3.0)
+plt.plot(KPOINTS, RELATIVE_PR, linewidth=0.5, linestyle="-",
+         marker="o", markersize=3.0, color="tab:orange")
 #plt.legend(loc='upper right', prop={"size": 12})
 plt.xlabel("KPOINTS", fontsize=14)
 plt.ylabel('Pressure [eV/Å]', fontsize=14)
@@ -62,7 +68,7 @@ plt.savefig(path_picture + "REL_KP_PR.eps", format='eps', dpi=1200)
 plt.show()
 
 for i in range(len(RELATIVE)-1):
-    Delta = RELATIVE[i] - RELATIVE[i+1]
+    Delta = RELATIVE_EN[i] - RELATIVE_EN[i+1]
     if abs(Delta) <= 0.001:
         print ("Converged")
         # Set i+1 in ENCUT if it is not ex: 400-450, converges and then 400 is the number you shall use. If 450 is the case, then i+1
