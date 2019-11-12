@@ -33,3 +33,6 @@ Documents/
 *.toc
 *.tex
 *.pdf
+*.bbl
+*.blg
+*.DS_Store
