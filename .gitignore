@@ -32,7 +32,6 @@ Documents/
 *.synctex.gz
 *.toc
 *.tex
-*.pdf
 *.bbl
 *.blg
 *.DS_Store
