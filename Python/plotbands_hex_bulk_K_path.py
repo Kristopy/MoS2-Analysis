@@ -18,8 +18,11 @@ rc('font', **{'family': 'serif', 'serif': ['Random']})
 
 path_picture = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/Pictures/'
 
-path_read_files = 'ABEL/Bandstructures/Bulk/BAND_CALCULATIONS/'
-path_read_files2 = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/ABEL/Bandstructures/Bulk/BAND_CALCULATIONS/'
+#path_read_files = 'ABEL/Bandstructures/Bulk/BAND_CALCULATIONS/'
+#path_read_files2 = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/ABEL/Bandstructures/Bulk/BAND_CALCULATIONS/'
+path_read_files = 'TEST_BS/BANDCALCULATION/'
+path_read_files2 = '/Users/kristoffervarslott/Documents/MENA/Master_MENA/1.Master/FYS-MENA4111/MoS2-Analysis/TEST_BS/BANDCALCULATION/'
+
 # Read crystal structure from POSCAR
 atoms = io.read(path_read_files2 + 'POSCAR')
 
@@ -28,8 +31,10 @@ Fermi = float(os.popen('grep fermi' + ' cd ../' +
                        path_read_files + 'OUTCAR').readlines()[1].split()[3])
 
 print (Fermi)
+#Fermi = 6.0507
+#Fermi = 4.6300
 # Hard code Fermi level from SCF calculation
-#Fermi = 5.2031
+Fermi = 5.6000
 # Fermi bulk = 5.2091
 # Fermi Slab = -2.9188
 
@@ -82,15 +87,19 @@ xticks(X1, ['$%s$' % n for n in labels])
 for iband in range(nbands):
     plot(x1, band_energies[iband, :], linewidth=0.75, color="k")
 
-
+# 0.5731
 # Change range:
 margins(0)
-ylim(-4.10, 2.5)
-title('Band structure - $MoS_2$ [Bulk]', fontsize=14)
-xlabel('Irreducible Brilloiun zone [$\mathbf{k}$]', fontsize=12)
-ylabel('$E - E_{Fermi}$ (eV)', fontsize=12)
+ylim(-2.9538, 2.9)
+title('Band structure - $MoS_2$ [Bulk]', fontsize=17)
+xlabel('Irreducible Brilloiun zone [$\mathbf{k}$]', fontsize=16)
+ylabel('$E - E_{Fermi}$ (eV)', fontsize=16)
+annotate("", xy=(X1[2] + (X1[3] - X1[2])/2, 0.9), xytext=(X1[3], 0.03),
+         arrowprops={'arrowstyle': '<->', 'ls': 'dashed', 'lw': 0.5}, va='center')
+text(X1[3]/1.5, 0.27, "Indirect Bandgap")
 tight_layout()
 # Print figure to file
+#plot([X1[0], X1[3]], [0, 0], linestyle="--", color="k", linewidth=0.6)
+#plot([X1[0], X1[3]], [0.9211, 0.9211], linestyle="--", color="k", linewidth=0.6)
 savefig(path_picture + 'bandstruct_bulk.eps', format='eps', dpi=1200)
-
 show()

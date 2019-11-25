@@ -78,10 +78,10 @@ for i in range(len(RELATIVE_EN)-1):
 # According to print output, use 650eV as ENCUT
 
 plt.figure(1)
-plt.plot(ENCUT, RELATIVE_EN, linewidth=0.5, linestyle="-", marker="o", markersize=3.0)
-plt.xlabel("ENCUT [eV]", fontsize=14)
-plt.ylabel('TOTEN [eV]', fontsize=14)
-plt.title("Relative TOTEN", fontsize=15)
+plt.plot(ENCUT, RELATIVE_EN, linewidth=0.5, linestyle="--", marker="o", color='k',  markersize=3.0)
+plt.xlabel("$E_{cutoff}$ [eV]", fontsize=16)
+plt.ylabel('$E_{rel}$[eV]', fontsize=16)
+plt.title("Relative total energy vs Cutoff energy", fontsize=17)
 plt.tight_layout()
 plt.savefig(path_picture + "REL_EN.eps", format='eps', dpi=1200)
 
